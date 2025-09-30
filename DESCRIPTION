@@ -1,0 +1,12 @@
+Package: msBayesImpute
+Title: What the Package Does (One Line, Title Case)
+Version: 0.1.0
+Authors@R: 
+    person("Jiaojiao", "He", , "Jiaojiao.he918@gmail.com", role = c("aut", "cre"))
+Description: This is a R wrapper of msbayesimpute python package
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
+    license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports: reticulate, roxygen2

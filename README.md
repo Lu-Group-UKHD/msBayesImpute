@@ -9,6 +9,8 @@ Key features:
 - Works on both small and large datasets.  
 - Available in **Python**, **R**, and via a **Shiny web interface**.  
 
+This repository contains the **R package** of msBayesImpute, which is a wrapper of the Python implementation. [msBayesImpute (Python implementation)](https://github.com/Lu-Group-UKHD/msBayesImpute_Py).  
+
 ---
 
 ## Repository structure

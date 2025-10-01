@@ -1,5 +1,7 @@
 # msBayesImpute
 
+<img width="2802" height="1598" alt="msBayesImpute architecture" src="https://github.com/user-attachments/assets/42588312-5ebc-43de-893b-46f7b7ed9aba" />
+
 **msBayesImpute** is a versatile framework for handling missing values in **mass spectrometry (MS) proteomics data**.  
 It integrates **probabilistic dropout models** into a **Bayesian matrix factorization** framework, enabling robust, data-driven imputation.  
 

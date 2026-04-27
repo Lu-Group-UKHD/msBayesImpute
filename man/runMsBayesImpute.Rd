@@ -8,7 +8,8 @@ runMsBayesImpute(
   miss_data,
   n_components = NULL,
   convergence_mode = "fast",
-  drop_factor_threshold = 0.01
+  drop_factor_threshold = 0.01,
+  seed = NULL
 )
 }
 \arguments{

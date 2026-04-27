@@ -12,7 +12,8 @@ genProbMiss(
   rho_sd = 1,
   zeta_sd = 1,
   subSample = 0,
-  filter_threshold = 0
+  filter_threshold = 0,
+  seed = NULL
 )
 }
 \arguments{

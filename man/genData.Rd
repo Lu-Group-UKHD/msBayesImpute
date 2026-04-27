@@ -17,7 +17,8 @@ genData(
   alpha_row = 0,
   sd_row = 1,
   alpha_col = 20,
-  sd_col = 2
+  sd_col = 2,
+  seed = NULL
 )
 }
 \arguments{

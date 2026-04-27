@@ -8,16 +8,19 @@
 #' @return a list of a model and a data matrix
 #' @import reticulate
 #' @export
-runMsBayesImpute <- function(miss_data, n_components = NULL, convergence_mode = "fast", drop_factor_threshold = 0.01){
+runMsBayesImpute <- function(miss_data, n_components = NULL, convergence_mode = "fast", drop_factor_threshold = 0.01, seed = NULL){
   msbayesimputepy <- import("msbayesimputepy")
   # check and convert to data frame
   if (!is(miss_data, "data.frame"))
     miss_data <- as.data.frame(miss_data)
 
   # initiate model
+  if (!is.null(n_components)) n_components <- as.integer(n_components)
+  if (!is.null(seed)) seed <- as.integer(seed)
   msBayes_model <- msbayesimputepy$core$msBayesImpute(n_components = n_components,
                                                       convergence_mode = convergence_mode,
-                                                      drop_factor_threshold = drop_factor_threshold)
+                                                      drop_factor_threshold = drop_factor_threshold,
+                                                      seed = seed)
   # run model
   msBayes_model$train(miss_data)
   imputed <- msBayes_model$predict(miss_data)
@@ -41,7 +44,8 @@ getParams <- function(msBayes_model, miss_data){
 
   # impute
   params <- msBayes_model$get_params(miss_data, output = "matrix")
-
+  params <- c(params, list("rho" = msBayes_model$model$rho$numpy(),
+                           "zeta" = msBayes_model$model$zeta$numpy()))
   return(params)
 }
 

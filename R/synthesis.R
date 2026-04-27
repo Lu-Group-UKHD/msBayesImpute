@@ -20,12 +20,13 @@
 #' @export
 genData <- function(n_features = 200, n_samples = 50, n_factors = 5, theta_z = 1, theta_w = 1,
                     tau = 0, tau_mode = "perProt", shape_noise = 1.5, scale_noise = 1.5,
-                    alpha_row = 0, sd_row = 1, alpha_col = 20, sd_col = 2){
+                    alpha_row = 0, sd_row = 1, alpha_col = 20, sd_col = 2, seed = NULL){
   msbayesimputepy <- import("msbayesimputepy")
+  if (!is.null(seed)) seed <- as.integer(seed)
   dataList <- msbayesimputepy$generation$gen_data(n_features = as.integer(n_features), n_samples = as.integer(n_samples), n_factors = as.integer(n_factors),
                                                    theta_z = theta_z, theta_w = theta_w,
                                                    tau = tau, tau_mode = tau_mode, shape_noise = shape_noise, scale_noise = scale_noise,
-                                                   alpha_row = alpha_row, sd_row = sd_row, alpha_col = alpha_col, sd_col = sd_col)
+                                                   alpha_row = alpha_row, sd_row = sd_row, alpha_col = alpha_col, sd_col = sd_col, seed = seed)
   return(dataList)
 }
 
@@ -44,11 +45,13 @@ genData <- function(n_features = 200, n_samples = 50, n_factors = 5, theta_z = 1
 #' @return dataList
 #' @import reticulate
 #' @export
-genProbMiss <- function(X, rho = 20, zeta = 2, model = "perFeature", rho_sd = 1, zeta_sd = 1, subSample = 0, filter_threshold = 0){
+genProbMiss <- function(X, rho = 20, zeta = 2, model = "perFeature", rho_sd = 1, zeta_sd = 1, subSample = 0, filter_threshold = 0, seed = NULL){
   msbayesimputepy <- import("msbayesimputepy")
+  if (!is.null(seed)) seed <- as.integer(seed)
   dataList <- msbayesimputepy$generation$gen_prob_miss(X = X, rho = rho, zeta = zeta, model = model,
                                                      rho_sd = rho_sd, zeta_sd = zeta_sd, subSample = subSample,
-                                                     filter_threshold = filter_threshold)
+                                                     filter_threshold = filter_threshold,
+                                                     seed = seed)
   dataList$X_miss[is.nan(as.matrix(dataList$X_miss))] <- NA
   return(dataList)
 }

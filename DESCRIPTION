@@ -1,5 +1,5 @@
 Package: msBayesImpute
-Title: What the Package Does (One Line, Title Case)
+Title: msBayesImpute: A Versatile Framework for Addressing Missing Values in Biomedical Mass Spectrometry Proteomics Data
 Version: 0.1.0
 Authors@R: 
     person("Jiaojiao", "He", , "Jiaojiao.he918@gmail.com", role = c("aut", "cre"))

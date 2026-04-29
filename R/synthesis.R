@@ -15,6 +15,7 @@
 #' @param sd_row intercepts are added to row level using a normal distribution. sd_row is the scale parameter of this distribution.
 #' @param alpha_col intercepts are added to column level using a normal distribution. alpha_col is the loc parameter of this distribution.
 #' @param sd_col intercepts are added to column level using a normal distribution. sd_col is the loc parameter of this distribution.
+#' @param seed a integer is used to control stochastic process
 #' @return dataList
 #' @import reticulate
 #' @export
@@ -42,6 +43,7 @@ genData <- function(n_features = 200, n_samples = 50, n_factors = 5, theta_z = 1
 #' @param zeta_sd the degree (standard deviation in a normal distribution) the slope of the drop-out model can vary.
 #' @param subSample if value is > 0 and < 1, features will be subsetted randomly by this percentage.
 #' @param filter_threshold the cutoff for removing proteins within missingness
+#' @param seed a integer is used to control stochastic process
 #' @return dataList
 #' @import reticulate
 #' @export

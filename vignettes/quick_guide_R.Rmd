@@ -80,9 +80,10 @@ X_miss %>%
 ```
 
 # Execute msBayesImpute model
-- msBayesImpute is user-friendly because it requires no parameter tunning.
-- In some cases, users would like to fix the number of latent factors or minimum explained variance, which can be set in msBayesImpute arguments by **n_components** (default is None) and **drop_factor_threshold** (default is 0.01).
-- There is also two options in **convergence_mode**: "fast" and "slow" (defualt)
+- In msBayesImpute, there are four arguments: **n_components**, **drop_factor_threshold**, **convergence_mode**, and **seed**
+- In some cases, users would like to fix the number of latent factors or minimum explained variance, which can be set in msBayesImpute arguments by **n_components** (default is None); Otherwise, **drop_factor_threshold** (default is 0.01) is used for filtering out insignificant factors.
+- There is also two options in **convergence_mode**: "fast" and "slow" (default)
+- **seed** is used for reproduction
 
 The output "res" contains one imputed data matrix and one msBayesImpute model
 ```{r}

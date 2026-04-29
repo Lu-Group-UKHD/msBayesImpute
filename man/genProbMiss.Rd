@@ -33,6 +33,8 @@ genProbMiss(
 \item{subSample}{if value is > 0 and < 1, features will be subsetted randomly by this percentage.}
 
 \item{filter_threshold}{the cutoff for removing proteins within missingness}
+
+\item{seed}{a integer is used to control stochastic process}
 }
 \value{
 dataList

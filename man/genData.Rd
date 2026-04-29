@@ -48,6 +48,8 @@ genData(
 \item{alpha_col}{intercepts are added to column level using a normal distribution. alpha_col is the loc parameter of this distribution.}
 
 \item{sd_col}{intercepts are added to column level using a normal distribution. sd_col is the loc parameter of this distribution.}
+
+\item{seed}{a integer is used to control stochastic process}
 }
 \value{
 dataList
